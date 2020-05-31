@@ -1,7 +1,8 @@
-package io.github.jgingh7.coderswag
+package io.github.jgingh7.coderswag.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import io.github.jgingh7.coderswag.R
 
 class MainActivity : AppCompatActivity() {
 
