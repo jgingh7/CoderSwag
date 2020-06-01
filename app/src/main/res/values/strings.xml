@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CoderSwag</string>
+    <string name="categories">Categories</string>
+    <string name="add_to_cart">ADD TO CART!</string>
+    <string name="detail_product_image">Detail Product Image</string>
+    <string name="products">Products</string>
+    <string name="category">category</string>
+    <string name="product_image">Product Image</string>
 </resources>

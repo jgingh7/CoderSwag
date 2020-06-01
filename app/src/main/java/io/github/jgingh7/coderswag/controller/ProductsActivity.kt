@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_products.*
 
 class ProductsActivity : AppCompatActivity() {
 
-    lateinit var adapter: ProductsAdapter
+    private lateinit var adapter: ProductsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

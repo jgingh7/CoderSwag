@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import io.github.jgingh7.coderswag.R
 import io.github.jgingh7.coderswag.model.Product
 
-class ProductsAdapter(val context: Context, val products: List<Product>, val itemClick: (Product) -> Unit) : RecyclerView.Adapter<ProductsAdapter.ProductHolder>() {
+class ProductsAdapter(private val context: Context, private val products: List<Product>, private val itemClick: (Product) -> Unit) : RecyclerView.Adapter<ProductsAdapter.ProductHolder>() {
     inner class ProductHolder(itemView: View, val itemClick: (Product) -> Unit) : RecyclerView.ViewHolder(itemView) {
-        val productImage = itemView?.findViewById<ImageView>(R.id.productImage)
-        val productName = itemView?.findViewById<TextView>(R.id.productName)
-        val productPrice = itemView?.findViewById<TextView>(R.id.productPrice)
+        private val productImage = itemView.findViewById<ImageView>(R.id.productImage)
+        private val productName = itemView.findViewById<TextView>(R.id.productName)
+        private val productPrice = itemView.findViewById<TextView>(R.id.productPrice)
 
         fun bindProduct(product: Product, context: Context) {
             val resourceId = context.resources.getIdentifier(product.image, "drawable", context.packageName)
@@ -36,6 +36,6 @@ class ProductsAdapter(val context: Context, val products: List<Product>, val ite
     }
 
     override fun onBindViewHolder(holder: ProductHolder, position: Int) {
-        holder?.bindProduct(products[position], context)
+        holder.bindProduct(products[position], context)
     }
 }

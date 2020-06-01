@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import io.github.jgingh7.coderswag.R
 import io.github.jgingh7.coderswag.model.Category
 
-class CategoryRecycleAdapter(val context: Context, val categories: List<Category>, val itemClick: (Category) -> Unit) : RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
+class CategoryRecycleAdapter(private val context: Context, private val categories: List<Category>, private val itemClick: (Category) -> Unit) : RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
     inner class Holder(itemView: View, val itemClick: (Category) -> Unit) : RecyclerView.ViewHolder(itemView) {
-        val categoryImage = itemView?.findViewById<ImageView>(R.id.categoryImage)
-        val categoryName = itemView?.findViewById<TextView>(R.id.categoryName)
+        private val categoryImage = itemView.findViewById<ImageView>(R.id.categoryImage)
+        private val categoryName = itemView.findViewById<TextView>(R.id.categoryName)
 
         fun bindCategory(category: Category, context: Context) {
             val resourceId = context.resources.getIdentifier(category.image, "drawable", context.packageName)
@@ -24,7 +24,7 @@ class CategoryRecycleAdapter(val context: Context, val categories: List<Category
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent?.context)
+        val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.category_list_item, parent, false)
         return Holder(view, itemClick)
     }
@@ -34,7 +34,7 @@ class CategoryRecycleAdapter(val context: Context, val categories: List<Category
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder?.bindCategory(categories[position], context)
+        holder.bindCategory(categories[position], context)
     }
 }
 
